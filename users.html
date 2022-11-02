@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" stylesheet="text/css" href="css/users.css">
+    </head>
+    <body>
+        <div class="UserOptions">
+            <div class="optionsPanel">
+                <ul>
+                    <li><a>Login User</a></li>
+                    <li><a>Create User</a></li>
+                    <li><a>List Users</a></li>
+                </ul>
+            </div>
+            <div class="userContent">
+                <div class="loginUser">
+                    <h1>Login User</h1>
+                    <form action="loginUser.php" method="post">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" placeholder="Enter Username">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Enter Password">
+                        <input type="submit" value="Login">
+                    </form>
+                </div>
+                <div class="createUser">
+                    <h1>Create User</h1>
+                    <form action="createUser.php" method="post">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" placeholder="Enter Username">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Enter Password">
+                        <input type="submit" value="Create">
+                    </form>
+                </div>
+                <div class="listUsers">
+                    <h1>List Users</h1>
+                    <table>
+                        <tr>
+                            <th>Username</th>
+                            <th>Password</th>
+                        </tr>
+                        {list of users goes here}
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div class="notification">
+            <p>{notification goes here}</p>
+        </div>
+</html>
