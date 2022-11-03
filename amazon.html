@@ -6,7 +6,30 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>title</title>
-    <!-- CSS only -->
+    <!-- add css file -->
+    <link rel="stylesheet" type="text/css" href="css/amazon.css">
+    
+    <script>
+        function hideData(){
+            var sectionsToHide = ["home", "prime","music"];
+            for (var i = 0; i < sectionsToHide.length; i++) {
+                document.getElementById(sectionsToHide[i]).style.display = "none";
+        }
+        }
+        
+
+        function showContent(data) {
+            // hide div tag
+            var sectionsToHide = ["content", "home", "prime","music"];
+            sectionsToHide.pop(data);
+            for (var i = 0; i < sectionsToHide.length; i++) {
+                document.getElementById(sectionsToHide[i]).style.display = "none";
+            }
+            // show div tag
+            document.getElementById(data).style.display = "block";
+        }
+        
+    </script>
 </head>
 <body>
     <div class="header" >
@@ -15,29 +38,43 @@
         </div>
         <div class="navbar">
             <ul>
-                <li><a href="html" target="content">Home</a></li>
-                <li><a href=".html" target="content">Prime</a></li>
-                <li><a href=".html" target="content">Music</a></li>
-                <li><a href=".html" target="content">About</a></li>
-                <li><a href="contactUs.html" target="_self">Contact Us</a></li>
-                <li><a href="users.html" target="_self">Users</a></li>
+                <li><input type="button" onclick="showContent('home')" value="Home"></li>
+                <li><input type="button" onclick="showContent('prime')" value="Prime"></li>
+                <li><input type="button" onclick="showContent('music')" value="Music"></li>
+                <li><a href="contactUs.html"><input type="button" value="ContactUs"></a></li>
+                <li><a href="amazon.html"><input type="button" value="Users"></a></li>
             </ul>
         </div>
     </div>
-    <div class="content">
-        {content goes here}
-    </div>
-    <div class="prime content">
-        {prime content goes here}
-        <a href="primepage.html" target="_self">More Details</a>
-    </div>
-    <div class="music content">
-        {music content goes here}
-    </div>
-    <div class="about content">
-        {about content goes here}
-    </div>
+    <main class="main">
+        <div class="content" id="content">
+            {Default content}
+        </div>
+        <div class="home" id="home">
+            {Home content}
+        </div>
+        <div class="prime" id="prime">
+            <h1>Prime</h1>
+            <p>Prime is a subscription service that gives you access to a wide variety of movies, music, and more. You can also get free 2-day shipping on many items. </p>
+            <p>Sign up for a free trial today!</p>
+            <a href="primePage.html" target="_self">
+                See more
+            </a>
+        </div>
+        <div class="music" id="music">
+            <h1>Music</h1>
+            <p>Listen to your favorite music on Amazon Music. You can also listen to music on your Alexa device.</p>
+            <p>Sign up for a free trial today!</p>
+            <a href="musicPage.html" target="_self">
+                See more
+            </a>
+        </div>
+    </main>
+        
 
 	
 </body>
+<script>
+    hideData();
+</script>
 </html>
