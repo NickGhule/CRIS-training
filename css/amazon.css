@@ -1,62 +1,62 @@
 .header {
-    background: #bbbbbb;
+    border-color: #000000;
+    background: black;
+    
+    
 }
-.header
-.logo img{
-    position: relative;
-    top: 0;
-    left: 0;
-    /* logo border */
-    /* border: 1px solid #000; */
-    /* logo border radius */
-    /* border-radius: 50%; */
-    /* logo background color */
-    /* background-color: #fff; */
-    /* logo padding */
-    padding: 10px;
-    /* logo width */
-    width: 10rem;
-}
-.header
-.navbar {
-    /* navbar background color */
-    background-color: rgb(171, 213, 250);
-    /* navbar border */
-    border: 1px solid #000;
-    position: relative;
-}
-.header
-.navbar ul{
-    /* navigation bar */
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    justify-content: end;
+
+.header .logo{
+    background: linear-gradient(black, rgb(79, 74, 74), black)
+    /* gradient from below */
+    /* background: #000000; */
+    
+    
 
 }
-.header
-.navbar li{
+.header .logo img{
+    /* background-color: #000000; */
+    /* border-color: #000000; */
+    width: 15rem;
+
+}
+
+.header .navbar ul li button,
+.header .navbar ul li a button {
+    color: #ffffff;
+    /* background-color: #000000; */
+    border-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    background-color: black;
     float: left;
-}
-
-.header
-.navbar ul li button, .navbar ul li a button{
-    display: block;
-    color: rgb(255, 0, 0);
-    text-align: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
     padding: 14px 16px;
-    text-decoration: none;
-}
-
-.main {
-    /* main background color */
-    background-color: rgba(255, 255, 255, 0.884);
-    /* main border */
-    position: relative;
-    border: 1px solid #000;
-    height: 100 %;
-
 
 }
+
+.header .navbar ul li button.active {
+    color: #ffffff;
+    background-color: #3c3737;
+    border-color: #ffffff;
+
+}
+
+.header .navbar ul li button:hover,
+.header .navbar ul li a button:hover {
+    color:  rgb(218,165,32);
+    background-color: #3c3737;
+    border-color: #f7ecec;
+    transform: scale(1.1);
+}
+
+/* allign items horizontally */
+.header .navbar ul li {
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+
+
+

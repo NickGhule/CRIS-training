@@ -10,37 +10,40 @@
     <link rel="stylesheet" type="text/css" href="css/amazon.css">
     
     <script>
-        function hideData(){
-            var sectionsToHide = ["home", "prime","music"];
-            for (var i = 0; i < sectionsToHide.length; i++) {
-                document.getElementById(sectionsToHide[i]).style.display = "none";
-        }
-        }
-        
-
-        function showContent(data) {
-            // hide div tag
-            var sectionsToHide = ["content", "home", "prime","music"];
-            sectionsToHide.pop(data);
-            for (var i = 0; i < sectionsToHide.length; i++) {
-                document.getElementById(sectionsToHide[i]).style.display = "none";
+        function fetchPage(pageName){
+            // set current button to active
+            var buttons = document.getElementsByClassName("active");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].className = buttons[i].className.replace("active", "");
             }
-            // show div tag
-            document.getElementById(data).style.display = "block";
+            var buttonId = pageName.substring(0, pageName.length - 8);
+            document.getElementById(buttonId).className += "active";
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("content").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", pageName, true);
+            xhttp.send();
         }
+
+        // create table with temp jason file
+        
         
     </script>
 </head>
 <body>
     <div class="header" >
         <div class="logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="logo"> 
+                <img src="https://upload.wikimedia.org/wikipedia/donate/f/fd/Amazon-logo-white.svg" alt="logo"> 
         </div>
         <div class="navbar">
             <ul>
-                <li><button type="button" onclick="showContent('home')" value="Home">Home</button></li>
-                <li><button type="button" onclick="showContent('prime')" value="Prime">Prime</button></li>
-                <li><button type="button" onclick="showContent('music')" value="Music">Music</li>
+                <li><button id="home" type="button" onclick="fetchPage('home.subpage')" value="Home">Home</button></li>
+                <li><button id="prime" type="button" onclick="fetchPage('prime.subpage')" value="Prime">Prime</button></li>
+                <li><button id="music" type="button" onclick="fetchPage('music.subpage')" value="Music">Music</button></li>
                 <li><a href="contactUs.html"><button type="button" value="ContactUs">ContactUs</button></a></li>
                 <li><a href="amazon.html"><button type="button" value="Users"></a>Users</button></li>
             </ul>
@@ -50,31 +53,12 @@
         <div class="content" id="content">
             {Default content}
         </div>
-        <div class="home" id="home">
-            {Home content}
-        </div>
-        <div class="prime" id="prime">
-            <h1>Prime</h1>
-            <p>Prime is a subscription service that gives you access to a wide variety of movies, music, and more. You can also get free 2-day shipping on many items. </p>
-            <p>Sign up for a free trial today!</p>
-            <a href="primePage.html" target="_self">
-                See more
-            </a>
-        </div>
-        <div class="music" id="music">
-            <h1>Music</h1>
-            <p>Listen to your favorite music on Amazon Music. You can also listen to music on your Alexa device.</p>
-            <p>Sign up for a free trial today!</p>
-            <a href="musicPage.html" target="_self">
-                See more
-            </a>
-        </div>
     </main>
         
 
 	
 </body>
 <script>
-    hideData();
+    // hideData();
 </script>
 </html>
