@@ -1,0 +1,8 @@
+<div class="music" id="music">
+    <h1>Music</h1>
+    <p>Listen to your favorite music on Amazon Music. You can also listen to music on your Alexa device.</p>
+    <p>Sign up for a free trial today!</p>
+    <a href="musicPage.html" target="_self">
+        See more
+    </a>
+</div>

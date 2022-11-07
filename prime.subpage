@@ -1,0 +1,8 @@
+<div class="prime" id="prime">
+    <h1>Prime</h1>
+    <p>Prime is a subscription service that gives you access to a wide variety of movies, music, and more. You can also get free 2-day shipping on many items. </p>
+    <p>Sign up for a free trial today!</p>
+    <a href="primePage.html" target="_self">
+        See more
+    </a>
+</div>
